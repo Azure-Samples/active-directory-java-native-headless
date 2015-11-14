@@ -34,6 +34,14 @@ From your shell or command line:
 
 Enter the client_id and the tenant name values at the top of the `PublicClient.java` file.
 
+```java
+public class PublicClient {
+
+    private final static String AUTHORITY = "https://login.microsoftonline.com/common/";
+    private final static String CLIENT_ID = "<your client id>";
+
+```
+
 ### Step 6: Package and then deploy the `public-client-adal4j-sample.jar` file.
 
 From your shell or command line:
@@ -47,7 +55,7 @@ This will generate a `adal4jsample.war` file in your /targets directory. Deploy 
 
 ### You're done!
 
-Click on "Sign-in" to start the process of logging in.
+Your command line interface should prompt you for the username and password and then access the Graph API to retreive your user information.
 
 ### Acknowledgements
 
