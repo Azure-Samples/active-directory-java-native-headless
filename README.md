@@ -32,7 +32,7 @@ From your shell or command line:
 
 ### Step 5: Configure your web app using `PublicClient.java`
 
-Enter the client_id and the tenant name values at the top of the `PublicClient.java` file.
+Enter the client_id value at the top of the `PublicClient.java` file.
 
 ```java
 public class PublicClient {
