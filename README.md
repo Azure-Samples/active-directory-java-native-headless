@@ -4,11 +4,9 @@ platforms: java
 author: brandwe
 ---
 
-# Integrating Azure AD into a Java web application
+# Integrating Azure AD into a Java command line using username and password
 
-This Java app will give you with a quick and easy way to set up a Web application in Java using OAuth2. The sample included in the download is designed to run on any platform and tested with Java 8.
-
-We've released all of the source code for this example in GitHub under an MIT license, so feel free to clone (or even better, fork!) and provide feedback on the forums.
+This sample demonstrates a command line application calling a web API that is secured using Azure AD. The Java application uses the Active Directory Authentication Library for Java (ADAL4J) to obtain a JWT access token through the OAuth 2.0 protocol. The access token is sent to the web API to authenticate the user. This sample shows you how to use ADAL to authenticate users via raw credentials (username and password) via a text-only interface.
 
 
 ## Quick Start
@@ -32,7 +30,7 @@ From your shell or command line:
 * `$ git clone https://github.com/Azure-Samples/active-directory-java-native-headless.git`
 * `$ cd active-directory-java-native-headless`
 
-### Step 5: Configure your web app using `ublicClient.java`
+### Step 5: Configure your web app using `PublicClient.java`
 
 Enter the client_id and the tenant name values at the top of the `PublicClient.java` file.
 

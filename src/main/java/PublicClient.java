@@ -11,8 +11,8 @@ import com.microsoft.aad.adal4j.AuthenticationResult;
 
 public class PublicClient {
 
-    private final static String AUTHORITY = "https://login.windows.net/common";
-    private final static String CLIENT_ID = "9ba1a5c7-f17a-4de9-a1f1-6178c8d51223";
+    private final static String AUTHORITY = "https://login.microsoftonline.com/common";
+    private final static String CLIENT_ID = "<your client id>";
 
     public static void main(String args[]) throws Exception {
 
