@@ -32,17 +32,17 @@ From your shell or command line:
 
 ### Step 4: Register the GraphClient app
 
-Sign in to the Azure management portal.
-Click on Active Directory in the left hand nav.
-Click the directory tenant where you wish to register the sample application.
-Click the Applications tab.
-In the drawer, click Add.
-Click "Add an application my organization is developing".
-Enter a friendly name for the application, for example "GraphAPI-Headless-Java", select "Native Client Application", and click next.
-For the Redirect URI, enter http://GraphClient. Please note that the Redirect URI will not be used in this sample, but it needs to be defined nonetheless. Click finish.
-Click the Configure tab of the application.
-Find the Client ID value and copy it aside, you will need this later when configuring your application.
-In "Permissions to Other Applications", ensure "Windows Azure Active Directory" is selected. Select "Sign in and read user profile" from the "Delegated Permissions" dropdown and ensure it is checked. This will be the permission we'll be using in the sample.
+* Sign in to the Azure management portal.
+* Click on Active Directory in the left hand nav.
+* Click the directory tenant where you wish to register the sample application.
+* Click the Applications tab.
+* In the drawer, click Add.
+* Click "Add an application my organization is developing".
+* Enter a friendly name for the application, for example "GraphAPI-Headless-Java", select "Native Client Application", and click next.
+* For the Redirect URI, enter http://GraphClient. Please note that the Redirect URI will not be used in this sample, but it needs to be defined nonetheless. Click finish.
+* Click the Configure tab of the application.
+* Find the Client ID value and copy it aside, you will need this later when configuring your application.
+* In "Permissions to Other Applications", ensure "Windows Azure Active Directory" is selected. Select "Sign in and read user profile" from the "Delegated Permissions" dropdown and ensure it is checked. This will be the permission we'll be using in the sample.
 
 
 ### Step 5: Configure your web app using `PublicClient.java`
