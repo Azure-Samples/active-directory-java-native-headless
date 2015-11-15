@@ -30,9 +30,24 @@ From your shell or command line:
 * `$ git clone https://github.com/Azure-Samples/active-directory-java-native-headless.git`
 * `$ cd active-directory-java-native-headless`
 
+### Step 4: Register the GraphClient app
+
+Sign in to the Azure management portal.
+Click on Active Directory in the left hand nav.
+Click the directory tenant where you wish to register the sample application.
+Click the Applications tab.
+In the drawer, click Add.
+Click "Add an application my organization is developing".
+Enter a friendly name for the application, for example "GraphAPI-Headless-Java", select "Native Client Application", and click next.
+For the Redirect URI, enter http://GraphClient. Please note that the Redirect URI will not be used in this sample, but it needs to be defined nonetheless. Click finish.
+Click the Configure tab of the application.
+Find the Client ID value and copy it aside, you will need this later when configuring your application.
+In "Permissions to Other Applications", ensure "Windows Azure Active Directory" is selected. Select "Sign in and read user profile" from the "Delegated Permissions" dropdown and ensure it is checked. This will be the permission we'll be using in the sample.
+
+
 ### Step 5: Configure your web app using `PublicClient.java`
 
-Enter the client_id value at the top of the `PublicClient.java` file.
+Enter the client id value above at the top of the `PublicClient.java` file.
 
 ```java
 public class PublicClient {
@@ -42,15 +57,15 @@ public class PublicClient {
 
 ```
 
-### Step 6: Package and then deploy the `public-client-adal4j-sample.jar` file.
+### Step 6: Package and then run the `public-client-adal4j-sample-jar-with-dependencies.jar ` file.
 
 From your shell or command line:
 
 * `$ mvn package`
 
-This will generate a `adal4jsample.war` file in your /targets directory. Deploy this war file using Tomcat or any other J2EE container solution. This WAR will automatically be hosted at `http://<yourserverhost>:<yourserverport>/adal4jsample/`
+This will generate a `public-client-adal4j-sample-jar-with-dependencies.jar` file in your /targets directory. Run this using your Java executable like below:
 
-* `$ java -cp  public-client-adal4j-sample.jar PublicClient`
+* `$ java -cp  public-client-adal4j-sample-jar-with-dependencies.jar  PublicClient`
 
 
 ### You're done!
