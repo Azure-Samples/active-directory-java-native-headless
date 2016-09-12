@@ -32,18 +32,15 @@ From your shell or command line:
 
 ### Step 4: Register the GraphClient app
 
-* Sign in to the Azure management portal.
-* Click on Active Directory in the left hand nav.
-* Click the directory tenant where you wish to register the sample application.
-* Click the Applications tab.
-* In the drawer, click Add.
-* Click "Add an application my organization is developing".
-* Enter a friendly name for the application, for example "GraphAPI-Headless-Java", select "Native Client Application", and click next.
-* For the Redirect URI, enter http://GraphClient. Please note that the Redirect URI will not be used in this sample, but it needs to be defined nonetheless. Click finish.
-* Click the Configure tab of the application.
-* Find the Client ID value and copy it aside, you will need this later when configuring your application.
-* In "Permissions to Other Applications", ensure "Windows Azure Active Directory" is selected. Select "Sign in and read user profile" from the "Delegated Permissions" dropdown and ensure it is checked. This will be the permission we'll be using in the sample.
 
+1. Sign in to the [Azure portal](https://portal.azure.com).
+2. On the top bar, click on your account and under the **Directory** list, choose the Active Directory tenant where you wish to register your application.
+2. Click on **More Services** in the left hand nav, and choose **Azure Active Directory**.
+3. Click on **Registered Applications** and choose **Add**.
+4. Enter a friendly name for the application, for example 'GraphAPI-Headless-Java' and select 'Native' as the Application Type. For the Redirect URI, enter http://GraphClient. Please note that the Redirect URI will not be used in this sample, but it needs to be defined nonetheless. Click on **Create** to create the application.
+5. While still in the Azure portal, choose your application, click on **Settings** and choose **Properties**.
+6. Find the Application ID value and copy it to the clipboard.
+7. Configure Permissions for your application - in the Settings menu, choose the 'Required permissions' section, click on **Add**, then **Select an API**, and select 'Microsoft Graph' (this is the Graph API). Then, click on  **Select Permissions** and select 'Sign in and read user profile'.
 
 ### Step 5: Configure your web app using `PublicClient.java`
 
