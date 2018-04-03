@@ -13,7 +13,7 @@ import com.microsoft.aad.adal4j.UserInfo;
 public class PublicClient {
 
     private final static String AUTHORITY = "https://login.microsoftonline.com/common/";
-    private final static String CLIENT_ID = "<your client id>";
+    private final static String CLIENT_ID = "<your_client_id>";
 
     public static void main(String args[]) throws Exception {
 
