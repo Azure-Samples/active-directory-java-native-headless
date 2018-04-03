@@ -8,6 +8,7 @@ import javax.naming.ServiceUnavailableException;
 
 import com.microsoft.aad.adal4j.AuthenticationContext;
 import com.microsoft.aad.adal4j.AuthenticationResult;
+import com.microsoft.aad.adal4j.UserInfo;
 
 public class PublicClient {
 
@@ -25,6 +26,15 @@ public class PublicClient {
 
             AuthenticationResult result = getAccessTokenFromUserCredentials(
                     username, password);
+
+            //User info returned
+            UserInfo userInfo = result.getUserInfo();
+            System.out.println("Family Name - " + userInfo.getFamilyName());
+            System.out.println("Given Name - " + userInfo.getGivenName());
+            System.out.println("Identity Provider - " + userInfo.getGivenName());
+            System.out.println("Tenant Id - " + userInfo.getTenantId());
+
+            // Tokens returned
             System.out.println("Access Token - " + result.getAccessToken());
             System.out.println("Refresh Token - " + result.getRefreshToken());
             System.out.println("ID Token - " + result.getIdToken());
