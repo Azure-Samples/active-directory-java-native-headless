@@ -8,11 +8,12 @@ import javax.naming.ServiceUnavailableException;
 
 import com.microsoft.aad.adal4j.AuthenticationContext;
 import com.microsoft.aad.adal4j.AuthenticationResult;
+import com.microsoft.aad.adal4j.UserInfo;
 
 public class PublicClient {
 
     private final static String AUTHORITY = "https://login.microsoftonline.com/common/";
-    private final static String CLIENT_ID = "2a4da06c-ff07-410d-af8a-542a512f5092";
+    private final static String CLIENT_ID = "<your_client_id>";
 
     public static void main(String args[]) throws Exception {
 
@@ -25,6 +26,15 @@ public class PublicClient {
 
             AuthenticationResult result = getAccessTokenFromUserCredentials(
                     username, password);
+
+            //User info returned
+            UserInfo userInfo = result.getUserInfo();
+            System.out.println("Family Name - " + userInfo.getFamilyName());
+            System.out.println("Given Name - " + userInfo.getGivenName());
+            System.out.println("Identity Provider - " + userInfo.getIdentityProvider());
+            System.out.println("Tenant Id - " + userInfo.getTenantId());
+
+            // Tokens returned
             System.out.println("Access Token - " + result.getAccessToken());
             System.out.println("Refresh Token - " + result.getRefreshToken());
             System.out.println("ID Token - " + result.getIdToken());
