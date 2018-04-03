@@ -31,7 +31,7 @@ public class PublicClient {
             UserInfo userInfo = result.getUserInfo();
             System.out.println("Family Name - " + userInfo.getFamilyName());
             System.out.println("Given Name - " + userInfo.getGivenName());
-            System.out.println("Identity Provider - " + userInfo.getGivenName());
+            System.out.println("Identity Provider - " + userInfo.getIdentityProvider());
             System.out.println("Tenant Id - " + userInfo.getTenantId());
 
             // Tokens returned

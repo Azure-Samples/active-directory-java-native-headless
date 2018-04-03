@@ -95,6 +95,11 @@
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
+            <archive>
+                <manifest>
+                    <mainClass>PublicClient</mainClass>
+                </manifest>
+            </archive>
         </configuration>
       </plugin>
 		</plugins>
