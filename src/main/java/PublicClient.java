@@ -2,11 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -15,9 +11,6 @@ import javax.naming.ServiceUnavailableException;
 
 import com.microsoft.aad.adal4j.AuthenticationContext;
 import com.microsoft.aad.adal4j.AuthenticationResult;
-import com.microsoft.aad.adal4j.UserInfo;
-import org.json.HTTP;
-import org.json.JSONObject;
 
 public class PublicClient {
 
@@ -96,28 +89,4 @@ public class PublicClient {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
