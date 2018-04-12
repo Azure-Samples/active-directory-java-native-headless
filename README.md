@@ -7,13 +7,13 @@ client: Java Console Application
 service: Microsoft Graph
 endpoint: AAD V1
 ---
-# Integrating Azure AD into a Java command line using username and password
+# Integrating Azure AD into a Java console application using username and password
 
 ## About this sample
 
 ### Overview
 
-This sample demonstrates a Java Console Application application calling Microsoft Graph that is secured using Azure Active Directory.
+This sample demonstrates a Java console application calling Microsoft Graph that is secured using Azure Active Directory.
 
 1. The Java application uses the Active Directory Authentication Library for Java (ADAL4J) to obtain a JWT access token through the OAuth 2.0 protocol.
 2. The access token is used as a bearer token to authenticate the user when calling the Microsoft Graph.
@@ -49,7 +49,7 @@ From your shell or command line:
 
 To register the project, you can:
 
-- either follow the steps in the paragraphs below ([Step 2](#step-2--register-the-sample-with-your-azure-active-directory-tenant) and [Step 3](#step-3--configure-the-sample-to-use-your-azure-ad-tenant))
+- either follow the steps in the paragraphs below
 - or use PowerShell scripts that:
   - **automatically** create for you the Azure AD applications and related objects (passwords, permissions, dependencies)
   - modify the projects' configuration files.
