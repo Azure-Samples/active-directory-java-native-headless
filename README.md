@@ -18,6 +18,8 @@ This sample demonstrates a Java console application calling Microsoft Graph that
 1. The Java application uses the Active Directory Authentication Library for Java (ADAL4J) to obtain a JWT access token through the OAuth 2.0 protocol.
 2. The access token is used as a bearer token to authenticate the user when calling the Microsoft Graph.
 
+![ava-Native-Diagra](C:\Users\sagonzal\TestSamples\active-directory-java-native-headless\ReadmeFiles\Java-Native-Diagram.png)
+
 ### Scenario: 
 
 This sample shows you how to use ADAL to authenticate users via raw credentials (username and password) via a text-only interface. For more information about how the protocols work in this scenario and other scenarios, see [Authentication Scenarios for Azure AD](https://azure.microsoft.com/documentation/articles/active-directory-authentication-scenarios/).
@@ -73,10 +75,11 @@ As a first step you'll need to:
 1. Enter a friendly name for the application, for example 'Native-Headless-Application' and select 'Native' as the *Application Type*.
 1. For the *Redirect URI*, enter `https://<your_tenant_name>/Native-Headless-Application`, replacing `<your_tenant_name>` with the name of your Azure AD tenant.
 1. Click on **Create** to create the application.
-1. In the succeeding page, Find the *Application ID* value and copy it to the clipboard. You'll need it to configure the Visual Studio configuration file for this project.
+1. In the succeeding page, Find the *Application ID* value and copy it to the clipboard. You'll need it to configure the configuration file for this project.
 1. Then click on **Settings**, and choose **Properties**.
 1. Configure Permissions for your application. To that extent, in the Settings menu, choose the 'Required permissions' section and then,
    click on **Add**, then **Select an API**, and type `Microsoft Graph` in the textbox. Then, click on  **Select Permissions** and select **User.Read**.
+1. Navigate back to the 'Required permissions' section, and click on **Grant Permissions**
 
 ### Step 4:  Configure the sample to use your Azure AD tenant
 
@@ -85,7 +88,7 @@ In the steps below, ClientID is the same as Application ID or AppId.
 #### Configure the app project
 
 1. Open the `src\main\java\PublicClient.java` file
-1. Find the app key `private final static String CLIENT_ID` and replace the existing value with the application ID (clientId) of the `Native-Headless-Application` application copied from the Azure portal.
+1. Find the line `private final static String CLIENT_ID` and replace the existing value with the application ID (clientId) of the `Native-Headless-Application` application copied from the Azure portal.
 
 ### Step 5: Run the sample
 
@@ -100,6 +103,24 @@ This will generate a `public-client-adal4j-sample-jar-with-dependencies.jar` fil
 ### You're done!
 
 Your command line interface should prompt you for the username and password and then access the Microsoft Graph API to retrieve your user information.
+
+### About the code
+
+The code to acquire a token is located entirely in the `src\main\java\PublicClient.Java` file. The Authentication context is created (line 45), passing the Authority(https://login.microsoftonline.com/common/) and an ExecutorService.
+
+`context = new AuthenticationContext(AUTHORITY, false, service);`
+
+A call to acquire the token is made using the Authentication context (line 46), passing in the resource(Microsoft graph), CLIENT_ID(App id of the app that was registered on Azure AD), and the username and password of the user. 
+
+`Future<AuthenticationResult> future = context.acquireToken("https://graph.microsoft.com", CLIENT_ID, username, password, null);`
+
+The result is passed back to the main() function, where then the access token is extracted and passed to the function making the call to Microsoft Graph(line 33)
+
+`String userInfo = getUserInfoFromGraph(result.getAccessToken());`
+
+The access token is then used as a bearer token to call the Microsoft Graph API (line 68)
+
+`conn.setRequestProperty("Authorization", "Bearer " + accessToken);`
 
 ## Community Help and Support
 
@@ -119,6 +140,6 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 ## More information
 
-For more information, see ADAL4J [conceptual documentation](https://github.com/AzureAD/azure-activedirectory-library-for-java/wiki)
+For more information, see ADAL4J [conceptual documentation](https://github.com/AzureAD/azure-activedirectory-library-for-java/wiki). 
 
 For more information about how OAuth 2.0 protocols work in this scenario and other scenarios, see [Authentication Scenarios for Azure AD](http://go.microsoft.com/fwlink/?LinkId=394414).
