@@ -18,7 +18,7 @@ This sample demonstrates a Java console application calling Microsoft Graph that
 1. The Java application uses the Active Directory Authentication Library for Java (ADAL4J) to obtain a JWT access token through the OAuth 2.0 protocol.
 2. The access token is used as a bearer token to authenticate the user when calling the Microsoft Graph.
 
-![ava-Native-Diagra](C:\Users\sagonzal\TestSamples\active-directory-java-native-headless\ReadmeFiles\Java-Native-Diagram.png)
+![Topology](./ReadmeFiles/Java-Native-Diagram.png)
 
 ### Scenario: 
 
