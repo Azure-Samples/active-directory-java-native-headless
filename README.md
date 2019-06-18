@@ -90,6 +90,7 @@ In the steps below, ClientID is the same as Application ID or AppId.
 
 1. Open the `src\main\java\PublicClient.java` file
 1. Find the line `private final static String CLIENT_ID` and replace the existing value with the application ID (clientId) of the `Native-Headless-Application` application copied from the Azure portal.
+1. Find the line `private final static String AUTHORITY = "https://login.microsoftonline.com/common/"` and replace the existing value with the tenant id of the account selected. That information can be visualized in App Services' endpoints information.
 
 ### Step 5: Run the sample
 
