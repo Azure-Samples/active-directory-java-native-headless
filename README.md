@@ -1,12 +1,14 @@
 ---
-services: active-directory
-platforms: Java
-author: xerners
-level: 200
-client: Java Console Application
-service: Microsoft Graph
-endpoint: AAD V1
+page_type: sample
+languages:
+- powershell
+- java
+products:
+- azure
+description: "This sample demonstrates a Java console application calling Microsoft Graph that is secured using Azure Active Directory."
+urlFragment: active-directory-java-native-headless
 ---
+
 # Integrating Azure AD into a Java console application using username and password
 
 ## About this sample
